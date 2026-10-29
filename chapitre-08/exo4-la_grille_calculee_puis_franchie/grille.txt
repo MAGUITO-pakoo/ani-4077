@@ -1,0 +1,5 @@
+N = 2 : sans index 144 octets, avec index 108 octets, rapport 1.333
+N = 10 : sans index 11664 octets, avec index 3372 octets, rapport 3.459
+N = 100 : sans index 1411344 octets, avec index 357612 octets, rapport 3.947
+grille 265 : 70225 sommets, index sur 2 octets, 2521752 octets
+grille 265 : 70225 sommets, index sur 4 octets, 3358104 octets

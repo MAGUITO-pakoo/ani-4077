@@ -1,0 +1,8 @@
+Les deux premières valeurs :
+Sans emploi, uInutile vaut -1 : le pilote l'a retiré du programme. Avec le coefficient nul il vaut 1, donc il est resté : mon pilote ne remplace pas 0.0 * uInutile par 0. Je m'attendais à -1 aussi.
+
+Le coefficient 0.001 :
+Il donne les mêmes valeurs que le coefficient nul. Ici l'uniforme change vraiment la couleur, donc il ne peut pas être retiré.
+
+Comment reconnaître le piège :
+Si un uniforme rend -1 avec un nom juste, je l'ajoute au calcul avec un coefficient de 0.001 et je relis l'emplacement. S'il n'est plus -1, il était juste retiré parce qu'il ne servait à rien.

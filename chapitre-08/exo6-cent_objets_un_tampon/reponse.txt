@@ -1,0 +1,8 @@
+Le temps :
+Un tampon est un peu plus lent : 0,528 ms par image contre 0,404 ms, et 0,388 ms de dessin contre 0,267 ms. Ça fait environ 0,12 ms de plus, sans doute à cause des deux uniformes posés avant chaque dessin.
+
+La mémoire :
+Cent tampons prennent 10800 octets contre 108 pour un seul, soit cent fois plus. Pour mille objets, ce serait 108000 octets contre 108.
+
+Ce que je choisirais :
+Un seul tampon. Je perds 0,12 ms par image, ce qui est peu, et je garde une mémoire cent fois plus petite. À mille objets, je mesurerais de nouveau le temps.

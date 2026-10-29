@@ -1,0 +1,8 @@
+La formule :
+Une grille de N × N sommets a (N-1)² cases, donc 2(N-1)² triangles. Sans index, ça fait 6(N-1)² sommets de 24 octets, soit 144(N-1)² octets. Avec index, N² sommets plus 6(N-1)² index de 2 octets, soit 24 N² + 12(N-1)² octets. Ça redonne mes lignes : 144 et 108 pour N = 2, 11664 et 3372 pour N = 10.
+
+Vers quoi tend le rapport :
+Vers 144 / 36 = 4. Quand N grandit, (N-1)² se rapproche de N². Un sommet intérieur est écrit 6 fois sans index (144 octets), contre 24 octets plus 6 index de 2 octets (36 octets) avec index. Le carré, à 1,33, est le pire cas.
+
+Ce que montrent les deux captures :
+C'est la même grille de 70 225 sommets. Avec 2 octets elle est cassée : de grands triangles la traversent. Un index sur 2 octets s'arrête à 65 535, donc le sommet 65 536 devient le sommet 0, sans aucune erreur. Avec 4 octets les rangées sont régulières.

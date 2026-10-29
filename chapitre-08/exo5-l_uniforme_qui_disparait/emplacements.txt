@@ -1,0 +1,3 @@
+jamais employe : uDecalage 1, uTeinte 0, uInutile -1
+coefficient nul : uDecalage 2, uTeinte 0, uInutile 1
+coefficient 0.001 : uDecalage 2, uTeinte 0, uInutile 1
