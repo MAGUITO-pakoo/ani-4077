@@ -1,0 +1,6 @@
+﻿ordre {0,1,2, 0,2,3}, sans tri : centre (237, 117, 63)
+ordre {0,1,2, 0,2,3}, avec tri : centre (237, 117, 63)
+ordre {0,1,2, 2,3,0}, sans tri : centre (237, 117, 63)
+ordre {0,1,2, 2,3,0}, avec tri : centre (237, 117, 63)
+ordre {0,2,1, 0,3,2}, sans tri : centre (237, 117, 63)
+ordre {0,2,1, 0,3,2}, avec tri : centre (13, 64, 71)

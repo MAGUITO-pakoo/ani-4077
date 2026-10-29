@@ -1,0 +1,6 @@
+carre SANS index : 6 sommets, 144 octets
+carre AVEC index : 6 index sur 4 sommets, 108 octets
+economie : 36 octets, soit 25.0 %
+maison SANS index : 9 sommets, 216 octets
+maison AVEC index : 9 index sur 5 sommets, 138 octets
+economie : 78 octets, soit 36.1 %

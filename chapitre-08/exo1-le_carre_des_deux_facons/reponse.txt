@@ -1,0 +1,8 @@
+Le nombre qui a le plus augmenté :
+C'est l'économie. Avec le toit elle passe de 36 octets (25 %) à 78 octets (36,1 %), donc elle a plus que doublé. Les octets sans index ont aussi monté, de 144 à 216, mais seulement de moitié, et ceux avec index de 108 à 138.
+
+Pourquoi :
+Sans index, le toit ajoute 3 sommets de 24 octets, soit 72 octets, parce que ses deux coins du bas sont écrits une deuxième fois. Avec index, il ajoute un seul vrai sommet (le sommet du toit, 24 octets) et 3 index de 2 octets, soit 30 octets en tout. Les 42 octets d'écart s'ajoutent à l'économie du carré, 36 + 42 = 78.
+
+Où sont les sommets repris :
+Dans la version sans index de la maison, 4 des 9 sommets sont des copies : les sommets 3 et 4 (copies des coins en bas à gauche et en haut à droite du carré) et les sommets 6 et 7 (le toit reprend les coins en haut à gauche et en haut à droite). Le coin en haut à droite est écrit 3 fois en tout. Avec index il n'est écrit qu'une fois, et on le retrouve seulement dans la liste d'index : 0, 1, 2, 0, 2, 3, 3, 2, 4.

@@ -1,0 +1,8 @@
+Ce qui ne change pas :
+Sans le tri, les trois ordres donnent le même carré, avec le même pixel au centre. les index désignent toujours les mêmes quatre coins, donc les mêmes positions et les mêmes couleurs, et les deux triangles couvrent toujours la même surface. seul l'ordre dans lequel on lit les trois sommets de chaque triangle a changé, pas les triangles eux-mêmes.
+
+Ce que change le tri :
+Avec le tri, l'ordre {0,2,1, 0,3,2} disparaît : au centre je lis la couleur du fond au lieu de celle du carré. Les deux autres ordres, {0,1,2, 0,2,3} et {0,1,2, 2,3,0}, restent visibles et donnent le même pixel que sans le tri.
+
+La règle que suit le tri :
+OpenGL regarde, à l'écran dans quel sens tournent les trois sommets d'un triangle. avec {0,1,2, 0,2,3} et {0,1,2, 2,3,0} ils tournent dans le sens inverse des aiguilles d'une montre, c'est une face avant et elle est gardée. avec {0,2,1, 0,3,2} ils tournent dans le sens des aiguilles, c'est une face arrière et elle est écartée. Décaler le départ du triangle (2,3,0 au lieu de 0,2,3) ne change pas le sens, mais échanger deux sommets le renverse.

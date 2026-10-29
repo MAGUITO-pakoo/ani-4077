@@ -1,0 +1,8 @@
+Ce que je vois :
+La fenêtre est toute pétrole, sans aucun carré. le pixel du centre vaut (13, 64, 71), la même couleur que le fond, avec glad comme sans glad. Le programme tourne normalement, sans message
+
+Ce que dit glGetError :
+Il rend 0x0000 dans les deux lancements, donc « aucune erreur », alors que le carré n'est pas dessiné. Ça prouve qu'un glGetError à zéro ne veut pas dire que le dessin est bon : OpenGL n'a rien refusé, le tableau n'a simplement plus son tampon d'index et il ne dessine rien. Seul le pixel montre que quelque chose ne va pas
+
+Ce que glad change :
+Dans mes deux lancements, rien : avec glad et sans glad j'ai exactement la même ligne, 0x0000 et (13, 64, 71). Glad relit lui-même le drapeau d'erreur après chaque appel, donc il pourrait le vider avant moi, mais ici il n'y avait pas d'erreur à vider. Mes deux lignes ne montrent donc pas de différence, et je ne peux pas dire que glad cache quelque chose chez moi
