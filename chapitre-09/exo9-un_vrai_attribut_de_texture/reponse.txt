@@ -1,0 +1,8 @@
+Ce que coute le nouvel attribut :
+Un attribut aUv de 2 floats ajoute 8 octets par sommet : le pas passe de 24 à 32 octets (scénarios A et B). Pour un tampon de 36 sommets, cela fait 864 octets contre 1152, soit 288 octets de plus. Si l'on abandonne la couleur au profit de la coordonnée (scénario C), le pas tombe à 20 octets et le tampon à 480 octets pour 24 sommets. Dans tous les cas le coût est petit et se calcule : nombre de sommets fois 8 octets.
+
+Pourquoi detourner la couleur est une mauvaise idee :
+Cela marche tant qu'un objet n'a besoin que d'un des deux. Mais un mur en brique texturé qui porte aussi une teinte par sommet a besoin à la fois d'une couleur et d'une coordonnée de texture en rangeant u et v dans deux composantes de Couleur, il ne reste qu'une seule composante pour la teinte. De plus, le nom aCouleur ment sur ce que contient l'attribut, et le code du nuanceur devient fragile. la prochaine personne qui lira ce code croira lire une couleur. 
+
+Ce que j'ai verifie dans mon propre code :
+J'ai relu Maillage.cpp et Maillage.h du chapitre 8. Mes deux appels à glVertexAttribPointer (position en 0, couleur en 1) utilisent sizeof(Sommet) comme pas et offsetof comme décalage, sans aucun nombre écrit à la main. Sommet contient six float (x, y, z, r, v, b) : le pas vaut 24 et les décalages 0 et 12, comme dans mon scénario A. Pour ajouter une coordonnée de texture, il faudrait deux float de plus (nommés u et t, car v est déjà mon canal vert) et un troisième appel en location 2 : le pas passerait à 32, avec un décalage de 24.

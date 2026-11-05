@@ -1,0 +1,8 @@
+Les deux carres sont-ils identiques :
+Non. EXACT rend toujours l'octet de départ, mais GAMMA ne le rend que par endroits : 3 octets sur 8 dans le scénario A (0, 100, 255), aucun sur 5 dans le scénario B. La puissance 1/2,2 donne une image proche de l'originale, pas la même. Le cycle ouvert est bien pire : 200 devient 147 et 50 devient 8.
+
+D'ou vient l'ecart residuel :
+De la forme de la courbe sRGB : une droite de pente 12,92 près du noir, puis une puissance 2,4 décalée. La puissance 1/2,2 n'a pas ce morceau droit, sa pente est infinie en zéro et elle remonte trop les valeurs sombres. Exemple : 5 donne une lumière linéaire d'environ 0,0015, et 0,0015 puissance 1/2,2 vaut environ 0,052, soit 13 en octet.
+
+Ou l'ecart est le plus grand :
+Dans les tons sombres. Scénario A : 5 devient 13 (+8), 20 devient 27 (+7), 50 devient 53 (+3). Scénario B : 1 devient 6 (+5), 3 devient 11 (+8), 10 devient 18 (+8). Le maximum est 8, pour 5 en A et pour 3 en B. Ensuite l'écart est minuscule et négatif : 128, 150 et 200 perdent 1, 100 ne bouge pas.

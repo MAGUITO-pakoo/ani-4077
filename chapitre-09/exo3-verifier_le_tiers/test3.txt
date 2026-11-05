@@ -1,0 +1,4 @@
+3
+petite 16 16 OUI
+moyenne 128 128 OUI
+grande 1024 1024 OUI

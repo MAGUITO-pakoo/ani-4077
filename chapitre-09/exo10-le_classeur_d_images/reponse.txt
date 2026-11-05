@@ -1,0 +1,8 @@
+Comment ma classe sait si une image est une couleur :
+Par le nom seulement. Elle compare le mot après le dernier souligné à la liste normal, rugosite, hauteur, metal, occlusion : s'il y est, la texture est Lineaire (une donnée), sinon SRGB (une couleur). Ainsi brique_normal est lineaire, brique est SRGB, et visage_normalise est SRGB car normalise n'est pas normal.
+
+Une image que ma regle classe mal :
+Une carte de normales nommée visage_normalise ou sol_nrm. Elle est déclarée SRGB : la carte décode la courbe à chaque lecture, les vecteurs normaux sont déformés et l'éclairage est faux, sans aucune erreur. Dans l'autre sens, une image de couleur nommée plaque_metal serait déclarée lineaire et sortirait délavée.
+
+Ce que je ferais a la place :
+Je ne laisserais pas le nom décider. L'espace de couleur serait donné par l'endroit où la texture sert : un matériau avec des emplacements (couleur de base, normales, rugosité), ou une demande explicite comme demande nom espace lineaire. Une même image demandée avec deux espaces différents serait une erreur signalée.
